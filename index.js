@@ -15,7 +15,7 @@ app.use(cors());
 const rutas = express.Router();//Se agrega al index de las rutas
 routerApi(rutas); 
 app.use('/v1', rutas);//Se agrega al index de las rutas
-
+const PORT =process.env.PORT || 4000;
 app.get("/", (req, res) => {
     const htmlResponse = `
       <html>
@@ -31,6 +31,6 @@ app.get("/", (req, res) => {
   });
 
 connectDB();
-app.listen(4000, ()=>{
-    console.log('listening at port 4000');
+app.listen(PORT, ()=>{
+    console.log(`Server is running on port ${PORT}`);
 })
