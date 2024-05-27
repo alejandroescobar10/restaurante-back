@@ -16,7 +16,19 @@ const rutas = express.Router();//Se agrega al index de las rutas
 routerApi(rutas); 
 app.use('/v1', rutas);//Se agrega al index de las rutas
 
-
+app.get("/", (req, res) => {
+    const htmlResponse = `
+      <html>
+        <head>
+          <title>NodeJs y Express en Vercel</title>
+        </head>
+        <body>
+          <h1>Soy un proyecto Back end en vercel</h1>
+        </body>
+      </html>
+    `;
+    res.send(htmlResponse);
+  });
 
 connectDB();
 app.listen(4000, ()=>{
