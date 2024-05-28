@@ -3,7 +3,7 @@ const express = require('express');//Se agrega al index de las rutas
 const {urlencoded, json} = require('express');
 const cors = require('cors');
 const {connectDB} = require('./db/dbmongo.js');
-
+require('dotenv').config(); // Asegúrate de requerir dotenv si usas un archivo .env localmente
 
 const app = express();
 
